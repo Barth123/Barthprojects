@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Log In | EBENEZER AGROVET</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <table align="center">
+           <td><img src="logo.jpg" alt="img not found" height="100" width="200"> </td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td> <div class="topnav" >
+               
+               
+               
+               
+               
+             </div> </td>
+            </table><br> 
+       </div>
+        <div class="container">
+
+        <?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+              <div class="row">
+                
+                <h2 style="text-align:center">Log In with Social Media or Manually</h2>
+                <div class="vl">
+                  <span class="vl-innertext">or</span>
+                </div>
+          
+                <div class="col">
+                  <a href="#" class="fb btn">
+                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                  </a>
+                  <a href="#" class="twitter btn">
+                    <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                  </a>
+                  <a href="#" class="google btn">
+                    <i class="fa fa-google fa-fw"></i> Login with Google+
+                  </a>
+                </div>
+          
+                <div class="col">
+                  <div class="hide-md-lg">
+                    <p>Or sign in manually:</p>
+                  </div>
+          
+                  <input type="text" name="username" placeholder="Username" 
+                  <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>"
+                  required>
+                  <span class="invalid-feedback" style="color:red;"><?php echo $username_err; ?></span>
+                  <input type="password" name="password" placeholder="Password" 
+                  
+                  <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
+                  required>
+                  <input type="submit" value="Login" >
+                </div>
+          
+              </div>
+            </form>
+          </div>
+          
+          <div class="bottom-container">
+            <div class="row">
+              <div class="col">
+                <a href="signup.php" style="color:white" class="btn">Sign up</a>
+              </div>
+              <div class="col">
+                <a href="#" style="color:white" class="btn">Forgot password?</a>
+              </div>
+            </div>
+            </div>
+
+            <footer>
+              <div align="center" style="padding: 2px;">
+                <p><a href="mailto:5@gmail.com"> Contact Us</a> | <a href="about us.html">About Us</a> | <a href="#privacy policy">Privacy Policy</a> | </p>
+               <p> <a href="#faqs">FAQs</a> | <a href="#Four Seasons Blog">Four Seasons Blog</a> | <a href="staff.html">Staff</a></p>
+               
+                <img src="footer.png" alt="" width="">
+                <p><small><i>copyright © 2022 Developed by <a href="tel:+254705036698">ProjectPower</a></i></small><i></p>
+              </div>
+             
+     
+          </footer>   
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

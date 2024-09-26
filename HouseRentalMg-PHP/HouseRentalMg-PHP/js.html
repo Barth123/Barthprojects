@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blending Name</title>
+	<style>
+		#output {
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="nameInput">
+	<br><br>
+	<button onclick="blendName()">Blend</button>
+	<br><br>
+	<label>Choose a font:</label>
+	<select id="fontSelect">
+		<option value="Arial">Arial</option>
+		<option value="Comic Sans MS">Comic Sans MS</option>
+		<option value="Times New Roman">Times New Roman</option>
+	</select>
+	<br><br>
+	<div id="output"></div>
+
+	<script>
+		function blendName() {
+			// Get the input value
+			var name = document.getElementById("nameInput").value;
+			
+			// Get the font value
+			var font = document.getElementById("fontSelect").value;
+
+			// Clear the output div
+			document.getElementById("output").innerHTML = "";
+
+			// Loop through each character of the name
+			for (var i = 0; i < name.length; i++) {
+				// Create a span element to hold the character
+				var span = document.createElement("span");
+				
+				// Set the text and font properties
+				span.innerHTML = name[i];
+				span.style.fontFamily = font;
+
+				// Add the span to the output div
+				document.getElementById("output").appendChild(span);
+			}
+		}
+	</script>
+</body>
+</html>
